@@ -1,0 +1,11 @@
+[
+  {
+    "id": "collision-b",
+    "incident": "distinct-b",
+    "asset": "SYN-COLLISION",
+    "family": "auth-failure",
+    "at": 11,
+    "severity": 8,
+    "true_positive": true
+  }
+]

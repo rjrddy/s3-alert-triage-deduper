@@ -1,0 +1,26 @@
+{
+  "id": "S3",
+  "name": "Alert triage deduper",
+  "problem": "Cluster and dedupe security alerts, rank by novelty and risk, cut noise measurably.",
+  "results": [
+    [
+      "Input synthetic alerts",
+      "input_alerts",
+      ""
+    ],
+    [
+      "Alert volume reduction",
+      "volume_reduction_percent",
+      " percent"
+    ],
+    [
+      "True-positive incident recall",
+      "true_positive_incident_recall",
+      ""
+    ]
+  ],
+  "diagram": "SyntheticAlerts --> AssetFamilyTimeWindow --> RepresentativeSelection --> NoveltySeverityRanking --> RecallReport",
+  "limits": "Synthetic security alerts only. Dedupe uses observable asset/family/time signatures and severity, never ground-truth labels or incident IDs. Reported recall is distinct labeled true-positive incident recall; raw positive-alert retention is separately recorded in bench.json so duplicate suppression is not mistaken for retaining every positive alert. A deliberately colliding pair of distinct incidents exposes a false merge; evidence/collisions.json retains the missed event. Novelty is inverse batch frequency, not a calibrated threat score. No production detection or threat-intelligence claims.",
+  "next": "Tune time windows on independent labeled simulations and preserve candidate incident splits for reviewer feedback.",
+  "status": "done"
+}

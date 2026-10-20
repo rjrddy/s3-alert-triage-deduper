@@ -1,0 +1,17 @@
+/Users/rajreddy/dev/outreach/projects/s3-alert-triage-deduper/.venv/bin/python -m ruff check src tests
+All checks passed!
+/Users/rajreddy/dev/outreach/projects/s3-alert-triage-deduper/.venv/bin/python -m ruff format --check src tests
+2 files already formatted
+/Users/rajreddy/dev/outreach/projects/s3-alert-triage-deduper/.venv/bin/python -m pytest -q
+..                                                                       [100%]
+2 passed in 0.09s
+/Users/rajreddy/dev/outreach/projects/s3-alert-triage-deduper/.venv/bin/python src/main.py > evidence/bench.json
+{
+  "input_alerts": 700,
+  "retained_alerts": 101,
+  "volume_reduction_percent": 85.57142857142857,
+  "true_positive_incident_recall": 0.9411764705882353,
+  "raw_positive_alert_retention": 0.15841584158415842,
+  "true_incidents": 17,
+  "retained_true_incidents": 16
+}
